@@ -2,6 +2,7 @@
 Open source version of Madwork
 
 Documentation pending.
+Import project using [Rojo](https://rojo.space/).
 
 NOTICE - Madwork will not run before you run this code in the command line in studio:
 ``` lua
