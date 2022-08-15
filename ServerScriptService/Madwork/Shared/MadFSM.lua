@@ -324,11 +324,11 @@ function MadFSMObject:_ChangeConfirm(old_state_name, new_state_name) --> [bool] 
 	local old_state = self:_GetState(old_state_name)
 	local new_state = self:_GetState(new_state_name)
 	EventHandlerStack += 1
-	if old_state.Leaving ~= nil and old_state.Leaving(old_state_name, new_state_name) == false then
+	if old_state.Leaving ~= nil and old_state.Leaving(new_state_name, old_state_name) == false then
 		EventHandlerStack -= 1
 		return false
 	end
-	if new_state.Entering ~= nil and new_state.Entering(old_state_name, new_state_name) == false then
+	if new_state.Entering ~= nil and new_state.Entering(new_state_name, old_state_name) == false then
 		EventHandlerStack -= 1
 		return false
 	end
